@@ -19,8 +19,10 @@ const client = new MongoClient(uri, {
 });
 async function run() {
   try {
-    await client.connect();
-    console.log("Connected to MongoDB");
+    app.get("/", async (req, res) => {
+      console.log("Gurukul server is running");
+      res.send("Gurukul Server is running");
+    });
   } finally {
   }
 }
